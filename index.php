@@ -95,31 +95,29 @@ function getNarocila($conn)
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>
-                                <form action='koda.php' method='POST'>
-                                    <input type='hidden' name='id' value='{$row['id']}'>
-                                    <td>{$row['id']}</td>
-                                    <td><input type='text' name='ime' value='{$row['ime']}' required></td>
-                                    <td><input type='text' name='priimek' value='{$row['priimek']}' required></td>
-                                    <td><input type='text' name='naslov' value='{$row['naslov']}' required></td>
-                                    <td><input type='email' name='e_posta' value='{$row['e_posta']}' required></td>
+                                        <form action='koda.php' method='POST'>
+                                        <input type='hidden' name='id' value='{$row['id']}'>
+                                        <td>{$row['id']}</td>
+                                        <td><input type='text' name='ime' value='{$row['ime']}' required></td>
+                                        <td><input type='text' name='priimek' value='{$row['priimek']}' required></td>
+                                        <td><input type='text' name='naslov' value='{$row['naslov']}' required></td>
+                                        <td><input type='email' name='e_posta' value='{$row['e_posta']}' required></td>
+                                        <td>
+                                            <input type='hidden' name='operation' value='posodobi_stranko'>
+                                            <button type='submit'>Posodobi</button>
+                                        </td>
+                                    </form>
                                     <td>
-                                        <input type='hidden' name='operation' value='posodobi_stranko'>
-                                        <button type='submit'>Posodobi</button>
+                                        <form action='koda.php' method='POST' style='display:inline;'>
+                                            <input type='hidden' name='id' value='{$row['id']}'>
+                                            <input type='hidden' name='operation' value='izbrisi_stranko'>
+                                            <button type='submit' onclick=\"return confirm('Ste prepričani?');\">Izbriši</button>
+                                        </form>
                                     </td>
-                                    <td>
-                                                <form action='koda.php' method='POST'>
-                                                    <input type='hidden' name='id' value='{$row['id']}'>
-                                                    <input type='hidden' name='operation' value='izbrisi_stranko'>
-                                                    <button type='submit' onclick=\"return confirm('Ste prepričani?');\">Izbriši</button>
-                                                </form>
-                                                
-
-                                     </td>
-                                </form>
-                            </tr>";
+                                </tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='6'>Ni zapisov.</td></tr>";
+                            echo "<tr><td colspan='7'>Ni zapisov.</td></tr>";
                         }
                         ?>
                     </tbody>
@@ -209,6 +207,7 @@ function getNarocila($conn)
                         <tr>
                             <th>ID</th>
                             <th>Ime izdelka</th>
+                            <th>kolicina</th>
                             <th>Cena</th>
                             <th>Dejanja</th>
                             <th>Dejanja2</th>
@@ -280,18 +279,19 @@ function getNarocila($conn)
                             while ($row = $result->fetch_assoc()) {
                                 echo "
                                         <tr>
-                                            <td>{$row['id']}</td>
-                                            <td>
+                                             <td>{$row['id']}</td>
+                                           
                                                 <form action='koda.php' method='POST'>
-                                                    <input type='hidden' name='id' value='{$row['id']}'>
-                                                    <input type='text' name='stranka_id' value='{$row['stranka_id']}' required>
-                                                    <input type='text' name='izdelek_id' value='{$row['izdelek_id']}' required>
-                                                    <input type='date' name='datum_narocila' value='{$row['datum_narocila']}' required>
-                                                    <input type='text' name='status' value='{$row['status']}' required>
-                                                    <input type='hidden' name='operation' value='posodobi_narocilo'>
+                                                     <input type='hidden' name='id' value='{$row['id']}'> 
+                                                   <td> <input type='text' name='stranka_id' value='{$row['stranka_id']}' required> </td>
+                                                    <td><input type='text' name='izdelek_id' value='{$row['izdelek_id']}' required></td>
+                                                   <td ><input type='date' name='datum_narocila' value='{$row['datum_narocila']}' required> </td>
+                                                   <td> <input type='text' name='status' value='{$row['status']}' required> </td>
+                                                   <td> <input type='hidden' name='operation' value='posodobi_narocilo'>
                                                     <button type='submit'>Posodobi</button>
+                                                    </td>
                                                 </form>
-                                            </td>
+                                            
                                             <td>
                                                 <form action='koda.php' method='POST'>
                                                     <input type='hidden' name='id' value='{$row['id']}'>
