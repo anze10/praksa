@@ -35,3 +35,11 @@ CREATE TABLE Narocila (
 Solski projekt 
 Anze Reopse 4.1.2025
 
+Kako zagnati projekt:
+mkdir praksa && cd FolderName
+git clone https://github.com/anze10/praksa.git
+
+na računalniku poiščete lokacijo mape praksa jo premaknete v mapo htdocs, ki jo ima apache. 
+Zaženete apache 
+in greste na pravilno povezavo, zacne se z http://localhost/path
+pa lep dan
