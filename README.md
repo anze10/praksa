@@ -42,14 +42,41 @@ CREATE TABLE users (
 
 ```
 
-Solski projekt 
-Anze Reopse 4.1.2025
+# Šolski projekt - Navodila za zagon
 
-Kako zagnati projekt:
-mkdir praksa && cd FolderName
-git clone https://github.com/anze10/praksa.git
+**Avtor:** Anže Reopse  
+**Datum:** 4. 1. 2025
 
-na računalniku poiščete lokacijo mape praksa jo premaknete v mapo htdocs, ki jo ima apache. 
-Zaženete apache 
-in greste na pravilno povezavo, zacne se z http://localhost/path
-pa lep dan
+---
+
+## Kako zagnati projekt
+
+1. Odprite terminal in ustvarite mapo ter se premaknite vanjo:
+    ```bash
+    mkdir praksa && cd praksa
+    ```
+
+2. Klonirajte repozitorij s kodo:
+    ```bash
+    git clone https://github.com/anze10/praksa.git
+    ```
+
+3. Premaknite mapo `praksa` v mapo `htdocs` z naslednjim ukazom v CMD:
+    ```cmd
+    move praksa "C:\xampp\htdocs"
+    ```
+
+4. Zaženite Apache strežnik iz CMD-ja:
+    ```cmd
+    cd C:\xampp
+    apache_start.bat
+    ```
+
+5. V spletnem brskalniku obiščite naslednji naslov:
+    ```
+    http://localhost/praksa/login.php
+    ```
+
+---
+
+Želim vam uspešno delo in lep dan! 😊
