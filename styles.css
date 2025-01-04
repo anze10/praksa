@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    /* Vključitev vmesnikov za boljše prilagajanje */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Omogoča sticky footer */
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    /* Raztegne glavni del, da zapolni prostor med header in footer */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    /* Centriranje vsebine horizontalno */
+    align-items: center;
+    /* Centriranje vsebine vertikalno */
+}
+
+.section {
+    display: none;
+    /* Privzeto skrijemo vse sekcije */
+    text-align: center;
+    /* Centeriramo besedilo znotraj sekcije */
+    width: 400px;
+    /* Fiksna širina obrazca */
+    margin: 0 auto;
+    /* Centeriramo sekcijo */
+}
+
+.section.active {
+    display: block;
+    width: 80%;
+    /* Starševski element zavzame celotno širino */
+    display: flex;
+    justify-content: center;
+    /* Poravna vsebino na sredino */
+    align-items: center;
+    flex-direction: column;
+    /* Postavi elemente v stolpec */
+    /* Prikazujemo le aktivno sekcijo */
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Zasede celotno širino sekcije */
+}
+
+input {
+    margin: 10px 0;
+    padding: 15px;
+    /* Povečamo notranje robove */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    /* Povečamo velikost pisave */
+}
+
+/* Dodatni stil za nova polja */
+input[type="date"] {
+    padding: 14px;
+    /* Rahlo zmanjšanje notranjih robov za boljšo vizualno skladnost */
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    padding: 15px;
+    /* Povečamo notranje robove gumba */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    /* Povečamo velikost pisave */
+}
+
+button:hover {
+    background: #45a049;
+}
+
+footer {
+    text-align: right;
+    /* Premaknemo besedilo na desno stran */
+    padding: 10px 10px;
+    /* Zmanjšamo padding za manjšo višino */
+    background: #f4f4f4;
+    position: sticky;
+    /* Sticky footer */
+    bottom: 0;
+    /* Prikazuje na dnu */
+    width: 100%;
+    /* Raztegne footer čez celotno širino */
+    height: 50px;
+    /* Določimo fiksno višino za footer */
+}
+
+
+table {
+    width: 100%;
+    /* Tabela zavzame celotno širino starševskega elementa */
+    max-width: 90%;
+    /* Tabela zavzame največ 90% širine strani */
+    margin: 20px auto;
+    /* Poravna tabelo na sredino strani */
+    border-collapse: collapse;
+    /* Odstrani podvojene obrobe */
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    /* Obroba med celicami */
+    padding: 8px;
+    /* Notranji odmik */
+    text-align: left;
+    /* Poravnava besedila */
+}
+
+th {
+    background-color: #f4f4f4;
+    /* Barva ozadja glave tabele */
+    font-weight: bold;
+    /* Poudari besedilo v glavi */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Svetlo siva za vsak drugi vrstni red */
+}
+
+tbody tr:hover {
+    background-color: #e2e2e2;
+
+}
